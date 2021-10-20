@@ -1,0 +1,32 @@
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+'}''{' {}
+
+An input string is valid if:
+  1. Open brackets must be closed by the same type of brackets.
+  2. Open brackets must be closed in the correct order.
+
+Input: s = "()[]{}"
+Output: true
+
+
+- loop through the string
+- '}''{' == false
+- edge cases? 
+
+
+
+Problem Statement- We have provided a string containing the pairs of brackets and we need to check 2 things if we have open bracket in the string there should be a closing bracket, and there order must be correct.
+If the string satisfies all the conditions return True else return False
+
+- I am assuming string only contains the parentheses
+
+Approach to solve the problem
+
+- Define a dict with the expected brackets 
+- Define a stack to store the intermediate expected values
+- Run a loop on each char of the string
+- Check if the char is in the dict if it is store the value of that key in the stack 
+- If char is not in the dict, check that char in the stack if it present, pop that char from the stack 
+- That means we got a pair check for the other char in the string
+- If we find any inappropriate  value return false 
+- If we complete all the char in the string at the end check for the stack length if there is no element in the stack return True else return False
